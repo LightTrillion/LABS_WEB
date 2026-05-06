@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная работа 6</title>
-    <!-- <script>console.log("Я скрипт!");</script> -->
-    <script src="script.js"></script>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f9; padding: 20px; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .task { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .task:last-child { border: none; }
+        h2 { color: #007bff; font-size: 1.2rem; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px; width: calc(100% - 20px); }
+        .row { display: flex; gap: 10px; }
+        .row input { width: 50%; }
+        button { padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; width: 100%; }
+        button:hover { background: #218838; }
+        .result { margin-top: 10px; padding: 10px; background: #e9ecef; border-radius: 5px; font-weight: bold; min-height: 20px; }
+    </style>
 </head>
-
 <body>
-    <!-- <script>console.log("И я скрипт!");</script> -->
+
+<div class="container">
+    <h1>Лабораторная работа №6</h1>
+
+    <!-- Задание 1.1 -->
+    <div class="task">
+        <h2>1.1 Реверс числа</h2>
+        <input type="text" id="in1_1" placeholder="Введите число">
+        <button onclick="res1_1()">Развернуть</button>
+        <div class="result" id="out1_1">Результат: </div>
+    </div>
+
+    <!-- Задание 1.2 -->
+    <div class="task">
+        <h2>1.2 Удаление дубликатов</h2>
+        <input type="text" id="in1_2" placeholder="Введите число">
+        <button onclick="res1_2()">Удалить повторы</button>
+        <div class="result" id="out1_2">Результат: </div>
+    </div>
+
+    <!-- Задание 1.3 -->
+    <div class="task">
+        <h2>1.3 Подсчет вхождений цифры</h2>
+        <div class="row">
+            <input type="text" id="in1_3_num" placeholder="Число">
+            <input type="text" id="in1_3_digit" placeholder="Цифра">
+        </div>
+        <button onclick="res1_3()">Посчитать</button>
+        <div class="result" id="out1_3">Результат: </div>
+    </div>
+
+    <!-- Задание 2.1 -->
+    <div class="task">
+        <h2>2.1 Первый уникальный символ</h2>
+        <input type="text" id="in2_1" placeholder="Введите строку">
+        <button onclick="res2_1()">Найти</button>
+        <div class="result" id="out2_1">Результат: </div>
+    </div>
+
+    <!-- Задание 2.2 -->
+    <div class="task">
+        <h2>2.2 Генерация строки</h2>
+        <input type="number" id="in2_2" placeholder="Длина строки">
+        <button onclick="res2_2()">Сгенерировать</button>
+        <div class="result" id="out2_2">Результат: </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
+</html>
