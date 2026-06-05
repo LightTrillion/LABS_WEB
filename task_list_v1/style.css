@@ -1,0 +1,260 @@
+/* Базовые стили + улучшения для фильтрации/сортировки */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #2d4644;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Форма добавления */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 25px;
+    gap: 8px;
+}
+
+input[type="text"] {
+    flex: 3 1 240px;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 0 2px #ffd966;
+}
+
+button[type="submit"] {
+    flex: 1;
+    padding: 14px 12px;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.95rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0c0c0;
+    transform: scale(0.97);
+}
+
+.clear-all-btn {
+    flex: 1;
+    padding: 14px 12px;
+    border: none;
+    background-color: #a52a2a;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.95rem;
+}
+
+.clear-all-btn:hover {
+    background-color: #8b1a1a;
+    transform: scale(0.97);
+}
+
+/* Панели фильтрации и сортировки */
+.control-panels {
+    background: rgba(255,255,240,0.08);
+    border-radius: 20px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(2px);
+}
+
+.filter-group, .sort-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.filter-group button, .sort-group button {
+    background: #ececec;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    color: #1e2a2a;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filter-group button.active, .sort-group button.active {
+    background: #ffb347;
+    color: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.filter-group button:hover, .sort-group button:hover {
+    background: #ffe0a3;
+    transform: translateY(-2px);
+}
+
+/* Список задач */
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 370px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+li {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background-color: white;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.item-content > label {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.item-content > label > span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 85%;
+    text-align: left;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+/* стиль для завершённых задач */
+li.completed .item-content {
+    background-color: #a0a0a0;
+    color: #f8f9fa;
+}
+
+li.completed .item-content span {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.item-content:hover {
+    background-color: #f7f3e0;
+}
+
+li.completed .item-content:hover {
+    background-color: #8e8e8e;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.2s;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.delete-btn:hover {
+    color: #d32f2f;
+    background: rgba(0,0,0,0.05);
+    transform: scale(1.1);
+}
+
+/* Пустой список или фильтр */
+ol:empty::after {
+    content: "Не найдено ни одного дела";
+    display: block;
+    color: #2d2f36;
+    background: #fef7e0;
+    padding: 28px 20px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 16px;
+}
+
+ol::-webkit-scrollbar {
+    width: 8px;
+}
+
+ol::-webkit-scrollbar-track {
+    background: #e0dede;
+    border-radius: 10px;
+}
+
+ol::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #2d4644;
+    transform: scale(1);
+}
+
+@media (max-width: 550px) {
+    .container {
+        padding: 12px;
+    }
+    .item-content {
+        padding: 10px 12px;
+    }
+    .delete-btn {
+        font-size: 20px;
+    }
+}

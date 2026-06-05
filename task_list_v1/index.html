@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Список дел — умные задачи</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Список дел</h1>
+
+    <!-- Форма добавления -->
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Новый элемент списка" autocomplete="off">
+        <button type="submit">Создать</button>
+        <button type="button" id="clearAllBtn" class="clear-all-btn">Очистить все</button>
+    </form>
+
+    <!-- Панели управления: фильтрация + сортировка -->
+    <div class="control-panels">
+        <div class="filter-group">
+            <button data-filter="all" class="active">Все заметки</button>
+            <button data-filter="active">Активные заметки</button>
+            <button data-filter="completed">Выполненные заметки</button>
+        </div>
+        <div class="sort-group">
+            <button data-sort="default">По умолчанию</button>
+            <button data-sort="alpha-asc">А → Я</button>
+            <button data-sort="alpha-desc">Я → А</button>
+            <button data-sort="status">По статусу</button>
+        </div>
+    </div>
+
+    <!-- Список задач -->
+    <ol id="todoList"></ol>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
