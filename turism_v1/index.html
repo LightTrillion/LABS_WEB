@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>TravelWorld - экспедиции и туры</title>
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header style="background-image: url(pattern-stroboscope-wallpaper.png);">
+    <div class="container">
+        <h1 style="text-align: center;">TravelWorld</h1>
+        <p style="text-align: center;">открой континенты с душой - авторские маршруты</p>
+        <nav>
+            <ul>
+                <li><a href="#country-name">О стране</a></li>
+                <li><a href="#map-block">Интерактивная карта</a></li>
+                <li><a href="#description">Описание</a></li>
+                <li><a href="#gallery">Фотогалерея</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#feedback">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Блок НАЗВАНИЕ СТРАНЫ / герой -->
+    <section id="country-name" class="vertical-center">
+        <div class="container">
+            <h2>Скандинавское путешествие</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: auto;">Норвегия — фьорды, северное сияние и дикая природа. Погрузитесь в атмосферу викингов и современных мегаполисов.</p>
+            <div class="flex-stats" style="margin-top: 2rem;">
+                <div class="stats-card"><strong>15+</strong> фьордов</div>
+                <div class="stats-card"><strong>99%</strong> шанс увидеть сияние</div>
+                <div class="stats-card"><strong>Круизы</strong> каждый день</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК С КЛИКАБЕЛЬНОЙ SVG КАРТОЙ -->
+    <section id="map-block" class="vertical-center" style="background: #f6f2ec;">
+        <div class="container">
+            <h2>🗺️ Регионы Норвегии</h2>
+            <p>Кликни на область — скоро здесь появится динамическое переключение (JS в разработке). А пока hover‑эффект с анимацией!</p>
+            <div class="map-container">
+                <svg class="map-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <polygon class="region" data-region="north" id="north-region" points="150,20 300,30 340,90 280,160 210,150 150,110 120,60" fill="#93c5a4" stroke="#2c3e4e" stroke-width="1.8" />
+                    <polygon class="region" data-region="central" id="central-region" points="160,170 260,180 300,240 230,280 160,270 110,230 120,180" fill="#c0a080" stroke="#2c3e4e" stroke-width="1.8" />
+                    <polygon class="region" data-region="south" id="south-region" points="200,290 300,280 360,320 330,370 250,380 190,360 170,320" fill="#7faa9a" stroke="#2c3e4e" stroke-width="1.8" />
+                    <text x="200" y="80" class="region-text">Северный регион</text>
+                    <text x="195" y="210" class="region-text">Центральный</text>
+                    <text x="255" y="330" class="region-text">Южный / Осло</text>
+                    <rect x="380" y="20" width="14" height="14" fill="#93c5a4" rx="3" />
+                    <text x="400" y="33" font-size="10" fill="#2c3e4e">Север</text>
+                    <rect x="380" y="45" width="14" height="14" fill="#c0a080" rx="3" />
+                    <text x="400" y="58" font-size="10" fill="#2c3e4e">Центр</text>
+                    <rect x="380" y="70" width="14" height="14" fill="#7faa9a" rx="3" />
+                    <text x="400" y="83" font-size="10" fill="#2c3e4e">Юг</text>
+                </svg>
+            </div>
+            <p class="map-legend" style="margin-top: 12px; font-size:0.9rem;">✨ <strong>Анимация:</strong> при наведении регион подсвечивается, появляется тень, утолщается контур — идеально для будущего интерактива.</p>
+        </div>
+    </section>
+
+    <!-- БЛОК ОПИСАНИЕ + ТАБЛИЦА -->
+    <section id="description" class="vertical-center">
+        <div class="container">
+            <h2>🏞️ Уникальная природа и культура</h2>
+            <p style="max-width: 800px; margin-bottom: 1.5rem;">Норвегия славится драматичными фьордами, горными плато и уютными городами. Экотуризм, рыбалка, походы и гастрономия — для каждого путешественника.</p>
+            <table>
+                <thead>
+                    <tr><th>Регион</th><th colspan="2">Ключевые особенности</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="2">Северный (Nordkapp)</td><td>🐟 Полярный день</td><td>🚤 Лофотенские острова</td></tr>
+                    <tr><td>❄️ Северное сияние (сентябрь–апрель)</td><td>🐋 Сафари на китов</td></tr>
+                    <tr><td rowspan="2">Центральный (Тронхейм)</td><td>🏰 Нидаросский собор</td><td>⛰️ горнолыжные курорты</td></tr>
+                    <tr><td>🌲 Национальный парк Рондане</td><td>🚵‍♀️ веломаршруты</td></tr>
+                    <tr><td rowspan="2">Южный (Осло-фьорд)</td><td>🏛️ Музей кораблей викингов</td><td>🎨 Современное искусство</td></tr>
+                    <tr><td>🛶 Каякинг по фьордам</td><td>🍣 Рестораны мишлен</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CSS КАРУСЕЛЬ (ФОТОГАЛЕРЕЯ) -->
+    <section id="gallery" class="vertical-center gallery-section">
+        <div class="container">
+            <h2>📸 Впечатления в кадре</h2>
+            <p>Листайте фото — плавная CSS-анимация сдвига, без JS. Наведись на картинку для масштабирования.</p>
+
+            <input type="radio" name="slide" id="radio1" class="slide-radio" checked>
+            <input type="radio" name="slide" id="radio2" class="slide-radio">
+            <input type="radio" name="slide" id="radio3" class="slide-radio">
+
+            <div class="carousel">
+                <div class="slides">
+                    <div class="slide"><img src="https://images.pexels.com/photos/161567/pexels-photo-161567.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Фьорд Норвегии" loading="lazy"></div>
+                    <div class="slide"><img src="https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Северное сияние над фьордом" loading="lazy"></div>
+                    <div class="slide"><img src="https://images.pexels.com/photos/2577274/pexels-photo-2577274.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Уютная норвежская деревня" loading="lazy"></div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <label for="radio1" class="nav-btn">◀</label>
+                <label for="radio2" class="nav-btn">●</label>
+                <label for="radio3" class="nav-btn">▶</label>
+            </div>
+            <div class="radio-group">
+                <label for="radio1"></label>
+                <label for="radio2"></label>
+                <label for="radio3"></label>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 10px;">✨ Анимация сдвига через transition + интерактивные кнопки (без JS) </p>
+        </div>
+    </section>
+
+    <!-- БЛОК О НАС / ФОНОВАЯ КАРТИНКА -->
+    <section id="about" class="vertical-center bg-image-section">
+        <div class="container">
+            <h2>🌟 О компании «TravelBloom»</h2>
+            <p style="max-width: 750px; background: rgba(0,0,0,0.4); padding: 10px 20px; border-radius: 60px; backdrop-filter: blur(6px);">Более 12 лет мы вдохновляем путешественников на открытия. Индивидуальные туры, безопасность и дух приключений.</p>
+            <div class="flex-stats">
+                <div class="stats-card"><strong>12 лет</strong> безупречной работы</div>
+                <div class="stats-card"><strong>350+</strong> уникальных маршрутов</div>
+                <div class="stats-card"><strong>🌱</strong> zero-waste философия</div>
+            </div>
+            <p>❤️ Организуем поездки в 40+ стран, но Норвегия — наша главная любовь!</p>
+        </div>
+    </section>
+
+    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
+    <section id="feedback" class="vertical-center">
+        <div class="container" style="max-width: 700px;">
+            <h2>💬 Задать вопрос эксперту</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>✉️ Свяжитесь с нами</legend>
+                    <p><input type="text" placeholder="Ваше имя" required></p>
+                    <p><input type="email" placeholder="Email" required></p>
+                    <p><textarea rows="3" placeholder="Расскажите о мечте или спросите про тур..."></textarea></p>
+                    <button type="button">Отправить запрос →</button>
+                </fieldset>
+            </form>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Нажмите на кнопку — анимация увеличения и тени уже работает</p>
+        </div>
+    </section>
+
+    <!-- FAQ блок -->
+    <section id="faq" class="vertical-center" style="min-height: auto; background: #faf7f2;">
+        <div class="container">
+            <h2>📌 Частые вопросы</h2>
+            <details>
+                <summary>🗓️ Когда лучше ехать в Норвегию?</summary>
+                <p>С мая по сентябрь — идеально для походов и фьордов, а с ноября по март — для охоты за северным сиянием и зимней сказки.</p>
+            </details>
+            <details>
+                <summary>✈️ Нужна ли виза?</summary>
+                <p>Для граждан РФ и стран СНГ требуется шенгенская виза. Наше агентство поможет с оформлением.</p>
+            </details>
+            <details>
+                <summary>🏨 Есть ли туры под бюджет?</summary>
+                <p>Да, разрабатываем варианты эконом, комфорт и премиум. Всё включено или только перелёт + проживание.</p>
+            </details>
+        </div>
+    </section>
+</main>
+
+<footer id="contacts">
+    <div class="container">
+        <h2 style="color: #f4c9a1;">Контакты</h2>
+        <p>📍 Осло, ул. Карла Юхана, 12 | 📞 +47 22 11 33 55 | ✉️ hello@travelbloom.no</p>
+        <p>📱 Мы в соцсетях: Instagram / Telegram — @travelbloom_expeditions</p>
+        <p style="margin-top: 1rem;">&copy; 2025 TravelBloom — путешествуй осознанно</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
